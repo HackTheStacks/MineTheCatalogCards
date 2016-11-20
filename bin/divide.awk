@@ -2,6 +2,7 @@
 /A.*M.*N/ { state = "I"}
 #/D.*t/ { state = "D"}
 /ity/ { state = "L"}
+/Loc/ { state = "L"}
 /REMARKS/ { state = "R"}
 state == "" { name = name " " $0}
 state == "I" { id = id " " $0}
