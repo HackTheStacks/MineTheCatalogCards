@@ -1,9 +1,9 @@
 #!/usr/bin/awk -f
-/A.*M.*N/ { state = "I"}
-#/D.*t/ { state = "D"}
-/ity/ { state = "L"}
-/Loc/ { state = "L"}
-/REMARKS/ { state = "R"}
+/A.*M.*N|A.*O.*U/ { state = "I"}
+/D.te|Dm/ { state = "D"}
+/January|February|March|April|May|June|July|August|September|October|November|December/ { state = "D"}
+/Loc|L.*ty|ity/ { state = "L"}
+/RE.*KS|ARKS/ { state = "R"}
 state == "" { name = name " " $0}
 state == "I" { id = id " " $0}
 state == "D" { date = date " " $0}
